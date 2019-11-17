@@ -4,11 +4,21 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "parcel watch --public-url . ./src/app.ts --no-hmr --target es6"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "material-ui": "^0.20.2"
+    "awesome-typescript-loader": "^5.2.1",
+    "material-ui": "^0.20.2",
+    "parcel": "^1.12.4",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "webpack": "^4.41.2"
+  },
+  "devDependencies": {
+    "typescript": "^3.7.2",
+    "webpack-cli": "^3.3.10"
   }
 }
