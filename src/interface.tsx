@@ -1,6 +1,4 @@
-//import react = require("react");
-import React = require("react");
-//import react from "react";
+import * as React from "react";
 
 var idk = <h1>wazzup</h1>
 
