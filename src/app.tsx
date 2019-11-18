@@ -4,6 +4,7 @@ import {idk} from "./interface";
 import Title from "./Title"
 //import Chart from "./Chart"
 import Dashboard from "./Dashboard"
+import PersistentDrawerLeft from "./PersistentDrawerLeft"
 
 function main() {
 	console.log("hello webpack");
@@ -14,13 +15,18 @@ function main() {
 	//	<Chart name="hello">
 	//		hello chart
 	//	</Chart>
+	//	<Dashboard>
+//
+	//	</Dashboard>
 	//);
 	//{chart}
-	var div = (
-		<Dashboard>
-			
-		</Dashboard>
-	);
+	var div = [
+		<PersistentDrawerLeft>
+
+		</PersistentDrawerLeft>,
+		<img src="images/1.png"></img>,
+		<div></div>
+	];
 	ReactDOM.render(div, document.getElementById("app"));
 	Object.assign(window, {
 		React,
