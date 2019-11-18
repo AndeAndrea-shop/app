@@ -6,6 +6,7 @@ import Title from "./Title"
 import Dashboard from "./Dashboard"
 import PersistentDrawerLeft from "./PersistentDrawerLeft"
 import Carousel from "./components/carousel"
+import SwipeText from "./components/SwipeTest"
 
 function main() {
 	console.log("hello webpack");
@@ -25,6 +26,9 @@ function main() {
 		//<PersistentDrawerLeft>
 
 		//</PersistentDrawerLeft>,
+		<SwipeText>
+
+		</SwipeText>,
 		<Carousel>
 			<img src="images/1.png"></img>
 			<img src="images/women.png"></img>

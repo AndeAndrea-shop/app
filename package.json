@@ -19,6 +19,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
+    "react-easy-swipe": "0.0.18",
     "recharts": "^1.8.5",
     "webpack": "^4.41.2"
   },
