@@ -5,6 +5,7 @@ import Title from "./Title"
 //import Chart from "./Chart"
 import Dashboard from "./Dashboard"
 import PersistentDrawerLeft from "./PersistentDrawerLeft"
+import Carousel from "./components/carousel"
 
 function main() {
 	console.log("hello webpack");
@@ -21,10 +22,14 @@ function main() {
 	//);
 	//{chart}
 	var div = [
-		<PersistentDrawerLeft>
+		//<PersistentDrawerLeft>
 
-		</PersistentDrawerLeft>,
-		<img src="images/1.png"></img>,
+		//</PersistentDrawerLeft>,
+		<Carousel>
+			<img src="images/1.png"></img>
+			<img src="images/women.png"></img>
+			<img src="images/men.png"></img>
+		</Carousel>,
 		<div></div>
 	];
 	ReactDOM.render(div, document.getElementById("app"));
