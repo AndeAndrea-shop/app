@@ -6,7 +6,6 @@ export default function Title(props) {
   return (
     <Typography component="h2" variant="h6" color="primary" gutterBottom>
       {props.children}
-	  <h1>idk321</h1>
     </Typography>
   );
 }
