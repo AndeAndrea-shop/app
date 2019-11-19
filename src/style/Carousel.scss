@@ -4,8 +4,7 @@ $small-font-size: 15px;
 $big-header-font-size: 30px;
 
 .Carousel {
-    background-color: greenyellow;
-    /*position: relative;*/
+    position: relative;
     .Indicators {
         width: 100%;
         margin-top: 10px;
@@ -24,7 +23,7 @@ $big-header-font-size: 30px;
         }
     }
     .ButtonWrapper {
-        //position: absolute;
+        position: absolute;
         height: calc(100% - 20px - 10px);
         background-color: transparent;
         top: 0;
@@ -42,7 +41,7 @@ $big-header-font-size: 30px;
     }
     .Button {
         margin: 0 10px;
-        //position: relative;
+        position: relative;
         top: calc(50% - 20px);
         background-color: $graphite;
         color: white;

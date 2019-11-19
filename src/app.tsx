@@ -22,10 +22,28 @@ function main() {
 		<div className="content">
 			<TestReactEasySwipe></TestReactEasySwipe>
 			<Carousel animation="slide">
-				<img src="images/1.png"></img>
-				<img src="images/women.png"></img>
-				<img src="images/men.png"></img>
+				<img src="images/carousel_1.png"></img>
+				<img src="images/carousel_2.png"></img>
 			</Carousel>
+
+			<div className="frontPageLink">
+				<a href="javascript:console.log('women');">
+					<img src="images/women.png"></img>
+				</a>
+			</div>
+
+			<div className="frontPageLink">
+				<a href="javascript:console.log('men');">
+					<img src="images/men.png"></img>
+				</a>
+			</div>
+
+			<div className="frontPageLink">
+				<a href="javascript:console.log('accessories');">
+					<img src="images/accessories.png"></img>
+				</a>
+			</div>
+
 			<TestReactSwipeable>
 			</TestReactSwipeable>
 			<DebugWindow></DebugWindow>
