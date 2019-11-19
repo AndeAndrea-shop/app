@@ -16,11 +16,16 @@ import "./style/app.scss";
 
 function main() {
 	/*
-	<PersistentDrawerLeft></PersistentDrawerLeft>
+			<TestReactEasySwipe></TestReactEasySwipe>
+
+			<PersistentDrawerLeft></PersistentDrawerLeft>
+
+			<TestReactSwipeable>
+			</TestReactSwipeable>
+			<DebugWindow></DebugWindow>
 	*/
 	var div = <>
 		<div className="content">
-			<TestReactEasySwipe></TestReactEasySwipe>
 			<Carousel animation="slide">
 				<img src="images/carousel_1.png"></img>
 				<img src="images/carousel_2.png"></img>
@@ -43,10 +48,6 @@ function main() {
 					<img src="images/accessories.png"></img>
 				</a>
 			</div>
-
-			<TestReactSwipeable>
-			</TestReactSwipeable>
-			<DebugWindow></DebugWindow>
 		</div>
 	</>
 	ReactDOM.render(div, document.getElementById("app"));

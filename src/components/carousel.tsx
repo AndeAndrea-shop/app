@@ -27,7 +27,6 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 			autoPlay: !!this.props.autoPlay,
 			interval: this.props.interval !== undefined ? this.props.interval : 4000
 		};
-		console.log("Autoplay: ", this.state.autoPlay);
 		this.timer = null;
 		//autoBind(this);
 		this.prev = this.prev.bind(this);
@@ -86,6 +85,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 	}
 
 	pressIndicator(index) {
+		//console.log("index", index);
 		this.setState({
 			active: index
 		}, this.reset);
@@ -139,7 +139,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 					</IconButton>
 				</div>
 				
-				{indicators ? <Indicators length={this.props.children.length} active={this.state.active} press={this.pressIndicator}/> : null}
+				{indicators ? <Indicators carousel={this} length={this.props.children.length} active={this.state.active} press={this.pressIndicator}/> : null}
 			</div>
 		)
 	}
@@ -169,16 +169,30 @@ function CarouselItem(props) {
 	)
 }
 
-function Indicators(props) {
-	let indicators = [];
-	for (var i=0; i<props.length; i++) {
-		const className = i === props.active ? "Active Indicator" : "Indicator";
-		const item = <FiberManualRecordIcon key={i} size='small' className={className} onClick={() => {props.press(i)}}/>;
-		indicators.push(item);
+class Indicators extends React.Component {
+	constructor(props) {
+		super(props);
+		this.onClick = this.onClick.bind(this);
 	}
-	return (
-		<div className="Indicators">
-			{indicators}
-		</div>
-	)
+	onClick(i) {
+		//console.log("this", this, "i", i);
+		var carousel: Carousel = this.props.carousel;
+		carousel.pressIndicator(i);
+	}
+	render() {
+		var props = this.props;
+		//console.log("Indicators(props)", this.props);
+		let indicators = [];
+		for (var i=0; i<props.length; i++) {
+			const className = i === props.active ? "Active Indicator" : "Indicator";
+			//const item = <FiberManualRecordIcon key={i} size='small' className={className} onClick={() => {props.press(i)}}/>;
+			const item = <FiberManualRecordIcon key={i} className={className} onClick={this.onClick.bind(this, i)}/>;
+			indicators.push(item);
+		}
+		return (
+			<div className="Indicators">
+				{indicators}
+			</div>
+		)
+	}
 }
