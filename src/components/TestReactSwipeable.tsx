@@ -35,22 +35,13 @@ export default class TestReactSwipeable extends Component {
 	}
  
 	render() {
-		const boxStyle = {
-			width: '100%',
-			height: '300px',
-			border: '1px solid black',
-			background: '#ccc',
-			padding: '20px',
-			fontSize: '3em'
-		};
- 
 		return (
 			<Swipeable
 				onSwiping={this.onSwipeStart}
 				onSwiped={this.onSwipeStart}
 				onSwipedLeft={this.onSwipedLeft}
 			>
-				<div style={boxStyle}>Open the console and swipe me {this.state.msg}</div>
+				<div>Open the console and swipe me {this.state.msg}</div>
 			</Swipeable>
 		);
 	}

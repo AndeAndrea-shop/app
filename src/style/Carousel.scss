@@ -3,91 +3,66 @@ $graphite: rgb(73, 73, 73);
 $small-font-size: 15px;
 $big-header-font-size: 30px;
 
-.Carousel
-{
-    position: relative;
-
-    .Indicators
-    {
+.Carousel {
+    background-color: greenyellow;
+    /*position: relative;*/
+    .Indicators {
         width: 100%;
         margin-top: 10px;
         text-align: center;
-        
-        .Indicator
-        {
+        .Indicator {
             font-size: $small-font-size;
-            
             cursor: pointer;
-
             transition: 200ms;
-
             color: $grey;
-
-            &.Active
-            {
+            &.Active {
                 color: $graphite;
             }
-
-            &:hover, &:active
-            {
+            &:hover, &:active {
                 color: rgb(31, 31, 31);
             }
         }
     }
-
-    .ButtonWrapper
-    {
-        position: absolute;
+    .ButtonWrapper {
+        //position: absolute;
         height: calc(100% - 20px - 10px);
         background-color: transparent;
         top: 0;
-
-        &.Next
-        {
+        &.Next {
             right: 0;
         }
-
-        &.Prev
-        {
+        &.Prev {
             left: 0
         }
-
-        &:hover > .Button
-        {
+        &:hover > .Button {
             background-color: black;
             filter: brightness(120%);
             opacity: 0.4;
         }
     }
-
-    .Button
-    {
+    .Button {
         margin: 0 10px;
-        position: relative;
+        //position: relative;
         top: calc(50% - 20px);
-
         background-color: $graphite;
         color: white;
         opacity: 0 !important;
-
         font-size: $big-header-font-size;
-
-        &.Next
-        {
+        &.Next {
             right: 0;
         }
-
-        &.Prev
-        {
+        &.Prev {
             left: 0
         }
-
         transition: 200ms;
         cursor: pointer;
-
-        &:hover
-        {
+        &:hover {
             opacity: 0.6 !important;
         }
+    }
+    .CarouselItem * {
+        width: 100%;
+        height: 100%;
+        background-color: red;
     }
 }

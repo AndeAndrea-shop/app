@@ -27,6 +27,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 			autoPlay: !!this.props.autoPlay,
 			interval: this.props.interval !== undefined ? this.props.interval : 4000
 		};
+		console.log("Autoplay: ", this.state.autoPlay);
 		this.timer = null;
 		//autoBind(this);
 		this.prev = this.prev.bind(this);
@@ -45,12 +46,14 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 		this.stop();
 	}
 
-	static getDerivedStateFromProps(nextProps, prevState) {
+	static getDerivedStateFromProps(nextProps: CarouselProps, prevState: CarouselState) {
+		//console.log("getDerivedStateFromProps");
+		//console.log("nextProps", nextProps);
+		//console.log("prevState", prevState);
 		if (nextProps.autoPlay !== prevState.autoPlay || nextProps.interval !== prevState.interval) {
-			return {
-				autoPlay: nextProps.autoPlay !== undefined ? nextProps.autoPlay : true,
-				interval: nextProps.interval !== undefined ? nextProps.interval : 4000
-			};
+			prevState.autoPlay = !!nextProps.autoPlay;
+			prevState.interval = nextProps.interval !== undefined ? nextProps.interval : 4000;
+			return prevState;
 		} else {
 			return null;
 		}
@@ -141,6 +144,7 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 		)
 	}
 }
+
 
 function CarouselItem(props) {
 	return (
