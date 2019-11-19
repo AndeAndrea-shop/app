@@ -18,11 +18,12 @@ const data = [
 	createData('21:00', 2400),
 	createData('24:00', undefined),
 ];
-export interface IChartProps
-{
-    name: string;
+
+export interface ChartProps {
+	name: string;
 }
-export default class Chart extends React.Component<IChartProps, {}> {
+
+export default class Chart extends React.Component<ChartProps, {}> {
 	constructor(props) {
 		super(props);
 		this.state = {

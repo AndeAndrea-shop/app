@@ -6,12 +6,25 @@ import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
 import NavigateNextIcon from '@material-ui/icons/NavigateNext';
 import '../style/Carousel.scss';
 
-export default class Carousel extends React.Component {
+export interface CarouselProps {
+	autoPlay?: boolean;
+	interval?: number;
+	indicators?: boolean;
+	animation?: "slide" | "face";
+}
+
+export interface CarouselState {
+	active: number;
+	autoPlay: boolean;
+	interval: number;
+}
+
+export default class Carousel extends React.Component<CarouselProps, CarouselState> {
 	constructor(props) {
 		super(props);
 		this.state = {
 			active: 0,
-			autoPlay: this.props.autoPlay !== undefined ? this.props.autoPlay : true,
+			autoPlay: !!this.props.autoPlay,
 			interval: this.props.interval !== undefined ? this.props.interval : 4000
 		};
 		this.timer = null;
@@ -100,7 +113,7 @@ export default class Carousel extends React.Component {
 
 		return (
 			<div className={`Carousel ${this.props.className ? this.props.className : ""}`} onMouseEnter={this.stop} onMouseOut={this.reset}>
-				{   
+				{
 					Array.isArray(this.props.children) ? 
 						this.props.children.map( (child, index) => {
 							return (
@@ -154,14 +167,11 @@ function CarouselItem(props) {
 
 function Indicators(props) {
 	let indicators = [];
-	for (let i = 0; i < props.length; i++)
-	{
+	for (var i=0; i<props.length; i++) {
 		const className = i === props.active ? "Active Indicator" : "Indicator";
 		const item = <FiberManualRecordIcon key={i} size='small' className={className} onClick={() => {props.press(i)}}/>;
-
 		indicators.push(item);
 	}
-
 	return (
 		<div className="Indicators">
 			{indicators}

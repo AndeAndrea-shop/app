@@ -16,16 +16,17 @@ function main() {
 	console.log("hello webpack");
 	var div = [
 		//<PersistentDrawerLeft>
-
 		//</PersistentDrawerLeft>,
 		<TestReactEasySwipe></TestReactEasySwipe>,
-		<Carousel>
-			<img src="images/1.png"></img>
-			<img src="images/women.png"></img>
-			<img src="images/men.png"></img>
+		<Carousel animation="slide">
+			<img src="images/1.png" width="640" height="480"></img>
+			<img src="images/women.png" width="640" height="480"></img>
+			<img src="images/men.png" width="640" height="480"></img>
 		</Carousel>,
 		<div></div>,
-		<TestReactSwipeable></TestReactSwipeable>
+		<TestReactSwipeable>
+			
+		</TestReactSwipeable>
 	];
 	ReactDOM.render(div, document.getElementById("app"));
 	Object.assign(window, {
