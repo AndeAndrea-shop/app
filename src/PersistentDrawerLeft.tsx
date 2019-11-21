@@ -22,6 +22,7 @@ import AddressIcon from '@material-ui/icons/Place';
 import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
 import CartIcon from '@material-ui/icons/Shop';
+import { setAppPage } from './app';
 
 const drawerWidth = 240;
 
@@ -111,6 +112,11 @@ export default function PersistentDrawerLeft(props) {
 		setOpen(false);
 	};
 
+	const changePage = (which: string) => {
+		console.log("changePage PersistentDrawerLeft", which)
+		setAppPage(which);
+	};
+
 	return (
 		<div className={classes.root}>
 			<CssBaseline />
@@ -156,7 +162,7 @@ export default function PersistentDrawerLeft(props) {
 				</div>
 				<Divider />
 				<List>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "main")}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
 						<ListItemText primary="Home" />
 					</ListItem>

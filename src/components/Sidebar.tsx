@@ -21,6 +21,7 @@ import HomeIcon from '@material-ui/icons/Home';
 import AddressIcon from '@material-ui/icons/Place';
 import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
+import { setAppPage } from "../app";
 
 const drawerWidth = 240;
 
@@ -121,6 +122,11 @@ export default class PersistentDrawerLeft extends React.Component<SidebarProps, 
 		});
 	}
 
+	changePage(which: string) {
+		console.log("Sidebar change page", which);
+		setAppPage(which);
+	}
+
 	render() {
 		//var classes = this.classes;
 		//var theme = this.theme;
@@ -167,9 +173,10 @@ export default class PersistentDrawerLeft extends React.Component<SidebarProps, 
 					</div>
 					<Divider />
 					<List>
-						<ListItem button>
+
+						<ListItem button action={this.changePage.bind(this, "home")} onClick={this.changePage.bind(this, "home")}>
 							<ListItemIcon><HomeIcon/></ListItemIcon>
-							<ListItemText primary="Home" />
+							<ListItemText primary="Homeasd" />
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><HomeIcon/></ListItemIcon>

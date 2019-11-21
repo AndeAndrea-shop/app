@@ -14,51 +14,73 @@ import TestReactEasySwipe from "./components/TestReactEasySwipe"
 import DebugWindow from "./components/DebugWindow";
 import "./style/app.scss";
 import { Divider } from "@material-ui/core";
+import PageMain from "./components/PageMain";
+import PageAccessories from "./components/PageAccessories";
+import PageMen from "./components/PageMen";
+import PageWomen from "./components/PageWomen";
 
-function main() {
-	/*
-			<TestReactEasySwipe></TestReactEasySwipe>
+export function setAppPage(which: string) {
+	var app = App.instance;
+	app.changePage(which);
+}
 
-			
+export class App extends React.Component {
+	static instance: App;
 
-			<TestReactSwipeable>
-			</TestReactSwipeable>
-			<DebugWindow></DebugWindow>
-	*/
-	var div = <>
-		<div className="content">
+	constructor(props) {
+		super(props);
+		App.instance = this;
+		this.state = {
+			page: "main"
+		}
+	}
 
+	changePage(which) {
+		console.log("changePage", which);
+		this.setState({page: which});
+	}
 
+	render() {
+		var pageComponent = <h1>switch-default</h1>
+
+		switch (this.state.page) {
+			case "main":
+				pageComponent = <PageMain/>;
+				break;
+			case "women":
+				pageComponent = <PageWomen/>;
+				break;
+			case "men":
+				pageComponent = <PageMen/>;
+				break;
+			case "man":
+				pageComponent = <PageAccessories/>;
+				break;
+		}
+
+		return (
 			<PersistentDrawerLeft>
-				<Carousel animation="slide">
-					<img src="images/carousel_1.png"></img>
-					<img src="images/carousel_2.png"></img>
-				</Carousel>
-
-				<div className="frontPageLink">
-					<a href="javascript:console.log('women');">
-						<img src="images/women.png"></img>
-					</a>
-				</div>
-
-				<div className="frontPageLink">
-					<a href="javascript:console.log('men');">
-						<img src="images/men.png"></img>
-					</a>
-				</div>
-
-				<div className="frontPageLink">
-					<a href="javascript:console.log('accessories');">
-						<img src="images/accessories.png"></img>
-					</a>
-				</div>
-
-				<Divider/>
-
+				{pageComponent}
 				<div className="invertedLineParent">
 					<div className="invertedLine"></div>
 				</div>
 			</PersistentDrawerLeft>
+		)
+	}
+}
+
+function main() {
+	/*
+			<TestReactEasySwipe></TestReactEasySwipe>
+			<TestReactSwipeable>
+			</TestReactSwipeable>
+			<DebugWindow></DebugWindow>
+	*/
+	var app = <App/>
+
+	var div = <>
+		<div className="content">
+			{app}
 		</div>
 	</>
 	var logo = document.getElementById("logo");
@@ -68,7 +90,8 @@ function main() {
 	Object.assign(window, {
 		React,
 		ReactDOM,
-		logo
+		logo,
+		//app
 	});
 }
 
