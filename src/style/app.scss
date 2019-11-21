@@ -15,3 +15,22 @@ html, body {
 .frontPageLink * {
 	width: 100%;
 }
+
+.invertedLineParent {
+	height: 20px;
+	display: flex;
+    justify-content: center;
+}
+.invertedLine {
+	position: fixed;
+    bottom: 10px;
+    background-color: #3e3e3ebf;
+    /* filter: invert(1); */
+    border-radius: 8px;
+    width: 200px;
+    height: 8px;
+    mix-blend-mode: color-burn;
+    display: flex;
+    justify-content: center;
+    //margin-bottom: 20px;
+}

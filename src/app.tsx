@@ -13,6 +13,7 @@ import TestReactSwipeable from "./components/TestReactSwipeable"
 import TestReactEasySwipe from "./components/TestReactEasySwipe"
 import DebugWindow from "./components/DebugWindow";
 import "./style/app.scss";
+import { Divider } from "@material-ui/core";
 
 function main() {
 	/*
@@ -27,7 +28,7 @@ function main() {
 	var div = <>
 		<div className="content">
 
-			
+
 			<PersistentDrawerLeft>
 				<Carousel animation="slide">
 					<img src="images/carousel_1.png"></img>
@@ -51,13 +52,23 @@ function main() {
 						<img src="images/accessories.png"></img>
 					</a>
 				</div>
+
+				<Divider/>
+
+				<div className="invertedLineParent">
+					<div className="invertedLine"></div>
+				</div>
 			</PersistentDrawerLeft>
 		</div>
 	</>
+	var logo = document.getElementById("logo");
+	if (logo)
+		logo.style.display = "none";
 	ReactDOM.render(div, document.getElementById("app"));
 	Object.assign(window, {
 		React,
-		ReactDOM
+		ReactDOM,
+		logo
 	});
 }
 

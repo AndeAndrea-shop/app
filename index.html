@@ -3,8 +3,34 @@
 	<head>
 		<meta name="viewport" content="width=device-width, user-scalable=no"></meta>
 		<link rel="stylesheet" type="text/css" href="dist/app.css">
+		<style>
+			html, body {
+				height: 100%;
+				width: 100%;
+				margin: 0;
+				padding: 0;
+			}
+			#logo {
+				width: 100%;
+				height: 100%;
+				display: flex;
+				justify-content: center;
+				flex-direction: column;
+			}
+			.logo_v {
+				display: flex;
+				justify-content: center;
+			}
+		</style>
 	</head>
 	<body>
+		<div id="logo">
+			<div class="logo_h">
+				<div class="logo_v">
+					<img src="images/andeandrea.jpg">
+				</div>
+			</div>
+		</div>
 		<div id="app"></div>
 		<script src="dist/app.js"></script>
 	</body>
