@@ -18,6 +18,10 @@ import PageMain from "./components/PageMain";
 import PageAccessories from "./components/PageAccessories";
 import PageMen from "./components/PageMen";
 import PageWomen from "./components/PageWomen";
+import PageMemberDiscount from "./components/PageMemberDiscount";
+import PageMyOrders from "./components/PageMyOrders";
+import PagePress from "./components/PagePress";
+import PageAddress from "./components/PageAddress";
 
 export function setAppPage(which: string) {
 	var app = App.instance;
@@ -44,17 +48,29 @@ export class App extends React.Component {
 		var pageComponent = <h1>switch-default</h1>
 
 		switch (this.state.page) {
+			case "accessories":
+				pageComponent = <PageAccessories/>;
+				break;
+			case "address":
+				pageComponent = <PageAddress/>;
+				break;
 			case "main":
 				pageComponent = <PageMain/>;
 				break;
-			case "women":
-				pageComponent = <PageWomen/>;
+			case "memberdiscount":
+				pageComponent = <PageMemberDiscount/>;
 				break;
 			case "men":
 				pageComponent = <PageMen/>;
 				break;
-			case "man":
-				pageComponent = <PageAccessories/>;
+			case "myorders":
+				pageComponent = <PageMyOrders/>;
+				break;
+			case "press":
+				pageComponent = <PagePress/>;
+				break;
+			case "women":
+				pageComponent = <PageWomen/>;
 				break;
 		}
 

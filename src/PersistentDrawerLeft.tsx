@@ -166,31 +166,31 @@ export default function PersistentDrawerLeft(props) {
 						<ListItemIcon><HomeIcon/></ListItemIcon>
 						<ListItemText primary="Home" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "women")}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
 						<ListItemText primary="Women" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "men")}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
 						<ListItemText primary="Men" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "accessories")}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
 						<ListItemText primary="Accessories" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "press")}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
 						<ListItemText primary="Press" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "memberdiscount")}>
 						<ListItemIcon><DiscountIcon/></ListItemIcon>
 						<ListItemText primary="Member Discount" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "myorders")}>
 						<ListItemIcon><OrderIcon/></ListItemIcon>
 						<ListItemText primary="My Orders" />
 					</ListItem>
-					<ListItem button>
+					<ListItem button onClick={changePage.bind(null, "address")}>
 						<ListItemIcon><AddressIcon/></ListItemIcon>
 						<ListItemText primary="Address" />
 					</ListItem>
