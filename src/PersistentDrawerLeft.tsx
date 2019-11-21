@@ -17,6 +17,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+import HomeIcon from '@material-ui/icons/Home';
+import AddressIcon from '@material-ui/icons/Place';
+import OrderIcon from '@material-ui/icons/List';
+import DiscountIcon from '@material-ui/icons/Money';
+import CartIcon from '@material-ui/icons/Shop';
 
 const drawerWidth = 240;
 
@@ -25,6 +30,7 @@ const useStyles = makeStyles(theme => ({
 		display: 'flex',
 	},
 	appBar: {
+		//position: "fixed",
 		transition: theme.transitions.create(['margin', 'width'], {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen,
@@ -61,6 +67,7 @@ const useStyles = makeStyles(theme => ({
 	content: {
 		flexGrow: 1,
 		padding: theme.spacing(3),
+		paddingTop: theme.spacing(9),
 		transition: theme.transitions.create('margin', {
 			easing: theme.transitions.easing.sharp,
 			duration: theme.transitions.duration.leavingScreen,
@@ -74,12 +81,26 @@ const useStyles = makeStyles(theme => ({
 		}),
 		marginLeft: 0,
 	},
+	toolbar: {
+		display: "flex",
+		justifyContent: "space-between",
+		backgroundColor: "white",
+		color: "black"
+	},
+	andeandrea: {
+		fontFamily: "Georgia, Times, Times New Roman, serif"
+	}
 }));
 
-export default function PersistentDrawerLeft() {
-	const classes = useStyles();
+export default function PersistentDrawerLeft(props) {
+	const classes = useStyles(props);
 	const theme = useTheme();
 	const [open, setOpen] = React.useState(false);
+
+	Object.assign(window, {
+		classes,
+		theme
+	})
 
 	const handleDrawerOpen = () => {
 		setOpen(true);
@@ -98,7 +119,8 @@ export default function PersistentDrawerLeft() {
 					[classes.appBarShift]: open,
 				})}
 			>
-				<Toolbar>
+				<Toolbar className={classes.toolbar}>
+				
 					<IconButton
 						color="inherit"
 						aria-label="open drawer"
@@ -108,9 +130,13 @@ export default function PersistentDrawerLeft() {
 					>
 						<MenuIcon />
 					</IconButton>
-					<Typography variant="h6" noWrap>
-						Persistent drawer
+					<Typography variant="h6" noWrap className={classes.andeandrea}>
+						Ande Andrea
 					</Typography>
+					<div className={clsx(open && classes.hide)}>
+						<CartIcon/>
+						<CartIcon/>
+					</div>
 				</Toolbar>
 			</AppBar>
 			<Drawer
@@ -129,21 +155,38 @@ export default function PersistentDrawerLeft() {
 				</div>
 				<Divider />
 				<List>
-					{['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					))}
-				</List>
-				<Divider />
-				<List>
-					{['All mail', 'Trash', 'Spam'].map((text, index) => (
-						<ListItem button key={text}>
-							<ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-							<ListItemText primary={text} />
-						</ListItem>
-					))}
+					<ListItem button>
+						<ListItemIcon><HomeIcon/></ListItemIcon>
+						<ListItemText primary="Home" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><HomeIcon/></ListItemIcon>
+						<ListItemText primary="Women" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><HomeIcon/></ListItemIcon>
+						<ListItemText primary="Men" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><HomeIcon/></ListItemIcon>
+						<ListItemText primary="Accessories" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><HomeIcon/></ListItemIcon>
+						<ListItemText primary="Press" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><DiscountIcon/></ListItemIcon>
+						<ListItemText primary="Member Discount" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><OrderIcon/></ListItemIcon>
+						<ListItemText primary="My Orders" />
+					</ListItem>
+					<ListItem button>
+						<ListItemIcon><AddressIcon/></ListItemIcon>
+						<ListItemText primary="Address" />
+					</ListItem>
 				</List>
 			</Drawer>
 			<main
@@ -152,6 +195,9 @@ export default function PersistentDrawerLeft() {
 				})}
 			>
 				<div className={classes.drawerHeader} />
+
+				{props.children}
+				{/*
 				<Typography paragraph>
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
 					ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
@@ -175,6 +221,7 @@ export default function PersistentDrawerLeft() {
 					nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
 					accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
 				</Typography>
+				*/}
 			</main>
 		</div>
 	);

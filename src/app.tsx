@@ -18,7 +18,7 @@ function main() {
 	/*
 			<TestReactEasySwipe></TestReactEasySwipe>
 
-			<PersistentDrawerLeft></PersistentDrawerLeft>
+			
 
 			<TestReactSwipeable>
 			</TestReactSwipeable>
@@ -26,28 +26,32 @@ function main() {
 	*/
 	var div = <>
 		<div className="content">
-			<Carousel animation="slide">
-				<img src="images/carousel_1.png"></img>
-				<img src="images/carousel_2.png"></img>
-			</Carousel>
 
-			<div className="frontPageLink">
-				<a href="javascript:console.log('women');">
-					<img src="images/women.png"></img>
-				</a>
-			</div>
+			
+			<PersistentDrawerLeft>
+				<Carousel animation="slide">
+					<img src="images/carousel_1.png"></img>
+					<img src="images/carousel_2.png"></img>
+				</Carousel>
 
-			<div className="frontPageLink">
-				<a href="javascript:console.log('men');">
-					<img src="images/men.png"></img>
-				</a>
-			</div>
+				<div className="frontPageLink">
+					<a href="javascript:console.log('women');">
+						<img src="images/women.png"></img>
+					</a>
+				</div>
 
-			<div className="frontPageLink">
-				<a href="javascript:console.log('accessories');">
-					<img src="images/accessories.png"></img>
-				</a>
-			</div>
+				<div className="frontPageLink">
+					<a href="javascript:console.log('men');">
+						<img src="images/men.png"></img>
+					</a>
+				</div>
+
+				<div className="frontPageLink">
+					<a href="javascript:console.log('accessories');">
+						<img src="images/accessories.png"></img>
+					</a>
+				</div>
+			</PersistentDrawerLeft>
 		</div>
 	</>
 	ReactDOM.render(div, document.getElementById("app"));
