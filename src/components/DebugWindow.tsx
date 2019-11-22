@@ -4,6 +4,7 @@ export default class DebugWindow extends React.Component {
 	constructor(props) {
 		super(props);
 	}
+
 	render() {
 		return <>
 			<h1>Window.innerWidth: {window.innerWidth}</h1>

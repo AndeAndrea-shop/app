@@ -1,6 +1,6 @@
 import React from "react";
 import Carousel from "./carousel";
-import { App, setAppPage } from "../app";
+import { setAppPage } from "./App";
 
 export default class PageMain extends React.Component {
 	constructor(props) {

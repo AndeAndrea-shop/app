@@ -145,7 +145,6 @@ export default class Carousel extends React.Component<CarouselProps, CarouselSta
 	}
 }
 
-
 function CarouselItem(props) {
 	return (
 		// props.active ? 
@@ -174,11 +173,13 @@ class Indicators extends React.Component {
 		super(props);
 		this.onClick = this.onClick.bind(this);
 	}
+
 	onClick(i) {
 		//console.log("this", this, "i", i);
 		var carousel: Carousel = this.props.carousel;
 		carousel.pressIndicator(i);
 	}
+
 	render() {
 		var props = this.props;
 		//console.log("Indicators(props)", this.props);

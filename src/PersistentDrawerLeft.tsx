@@ -22,7 +22,7 @@ import AddressIcon from '@material-ui/icons/Place';
 import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
 import CartIcon from '@material-ui/icons/Shop';
-import { setAppPage } from './app';
+import { setAppPage } from './components/App';
 
 const drawerWidth = 240;
 
@@ -193,6 +193,14 @@ export default function PersistentDrawerLeft(props) {
 					<ListItem button onClick={changePage.bind(null, "address")}>
 						<ListItemIcon><AddressIcon/></ListItemIcon>
 						<ListItemText primary="Address" />
+					</ListItem>
+					<ListItem button onClick={changePage.bind(null, "profile")}>
+						<ListItemIcon><AddressIcon/></ListItemIcon>
+						<ListItemText primary="Profile" />
+					</ListItem>
+					<ListItem button onClick={changePage.bind(null, "more")}>
+						<ListItemIcon><AddressIcon/></ListItemIcon>
+						<ListItemText primary="More" />
 					</ListItem>
 				</List>
 			</Drawer>

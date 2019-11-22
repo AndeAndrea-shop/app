@@ -23,7 +23,11 @@ export interface ChartProps {
 	name: string;
 }
 
-export default class Chart extends React.Component<ChartProps, {}> {
+export interface ChartState {
+	data: any[];
+}
+
+export default class Chart extends React.Component<ChartProps, ChartState> {
 	constructor(props) {
 		super(props);
 		this.state = {
