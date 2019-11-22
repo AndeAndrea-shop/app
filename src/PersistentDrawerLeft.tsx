@@ -22,7 +22,17 @@ import AddressIcon from '@material-ui/icons/Place';
 import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
 import CartIcon from '@material-ui/icons/Shop';
-import { setAppPage } from './components/App';
+import { setAppComponent } from './components/App';
+import PageMain from './components/PageMain';
+import PageMore from './components/PageMore';
+import PageProfile from './components/PageProfile';
+import PageAddress from './components/PageAddress';
+import PageMyOrders from './components/PageMyOrders';
+import PageMemberDiscount from './components/PageMemberDiscount';
+import PagePress from './components/PagePress';
+import PageAccessories from './components/PageAccessories';
+import PageMen from './components/PageMen';
+import PageWomen from './components/PageWomen';
 
 const drawerWidth = 240;
 
@@ -119,7 +129,7 @@ export default function PersistentDrawerLeft(props) {
 
 	return (
 		<div className={classes.root}>
-			<CssBaseline />
+			<CssBaseline/>
 			<AppBar
 				position="fixed"
 				className={clsx(classes.appBar, {
@@ -135,7 +145,7 @@ export default function PersistentDrawerLeft(props) {
 						edge="start"
 						className={clsx(classes.menuButton, open && classes.hide)}
 					>
-						<MenuIcon />
+						<MenuIcon/>
 					</IconButton>
 					<Typography variant="h6" noWrap className={classes.andeandrea}>
 						Ande Andrea
@@ -157,50 +167,50 @@ export default function PersistentDrawerLeft(props) {
 			>
 				<div className={classes.drawerHeader}>
 					<IconButton onClick={handleDrawerClose}>
-						{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+						{theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
 					</IconButton>
 				</div>
-				<Divider />
+				<Divider/>
 				<List>
-					<ListItem button onClick={changePage.bind(null, "main")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageMain/>)}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
-						<ListItemText primary="Home" />
+						<ListItemText primary="Home"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "women")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageWomen/>)}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
-						<ListItemText primary="Women" />
+						<ListItemText primary="Women"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "men")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageMen/>)}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
-						<ListItemText primary="Men" />
+						<ListItemText primary="Men"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "accessories")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageAccessories/>)}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
-						<ListItemText primary="Accessories" />
+						<ListItemText primary="Accessories"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "press")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PagePress/>)}>
 						<ListItemIcon><HomeIcon/></ListItemIcon>
-						<ListItemText primary="Press" />
+						<ListItemText primary="Press"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "memberdiscount")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageMemberDiscount/>)}>
 						<ListItemIcon><DiscountIcon/></ListItemIcon>
-						<ListItemText primary="Member Discount" />
+						<ListItemText primary="Member Discount"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "myorders")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageMyOrders/>)}>
 						<ListItemIcon><OrderIcon/></ListItemIcon>
-						<ListItemText primary="My Orders" />
+						<ListItemText primary="My Orders"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "address")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageAddress/>)}>
 						<ListItemIcon><AddressIcon/></ListItemIcon>
-						<ListItemText primary="Address" />
+						<ListItemText primary="Address"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "profile")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageProfile/>)}>
 						<ListItemIcon><AddressIcon/></ListItemIcon>
-						<ListItemText primary="Profile" />
+						<ListItemText primary="Profile"/>
 					</ListItem>
-					<ListItem button onClick={changePage.bind(null, "more")}>
+					<ListItem button onClick={setAppComponent.bind(null, <PageMore/>)}>
 						<ListItemIcon><AddressIcon/></ListItemIcon>
-						<ListItemText primary="More" />
+						<ListItemText primary="More"/>
 					</ListItem>
 				</List>
 			</Drawer>
@@ -209,7 +219,7 @@ export default function PersistentDrawerLeft(props) {
 					[classes.contentShift]: open,
 				})}
 			>
-				<div className={classes.drawerHeader} />
+				<div className={classes.drawerHeader}/>
 
 				{props.children}
 				{/*

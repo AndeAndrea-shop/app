@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ReactInstance, ComponentElement, ComponentType, ReactComponentElement } from "react";
 import PersistentDrawerLeft from "../PersistentDrawerLeft"
 import PageMain from "../components/PageMain";
 import PageAccessories from "../components/PageAccessories";
@@ -12,17 +12,20 @@ import "../style/app.scss";
 import PageProfile from "./PageProfile";
 import PageMore from "./PageMore";
 
-export function setAppPage(which: string) {
+//export function setAppComponent(component: React.Component) {
+export function setAppComponent(component: any) {
 	var app = App.instance;
-	app.changePage(which);
+	app.changeComponent(component);
 }
 
 interface AppProps {
 	nothing?: "yet";
 }
 
+type ReactComponentInstance = React.ComponentElement<any, any>;
+
 interface AppState {
-	page: string;
+	page: ReactComponentInstance
 }
 
 export class App extends React.Component<AppProps, AppState> {
@@ -32,54 +35,19 @@ export class App extends React.Component<AppProps, AppState> {
 		super(props);
 		App.instance = this;
 		this.state = {
-			page: "main"
+			page: <PageMain/>
 		}
 	}
 
-	changePage(which: string) {
-		//console.log("changePage", which);
-		this.setState({page: which});
+	changeComponent(component: ReactComponentInstance) {
+		//console.log("set component", component);
+		this.setState({page: component});
 	}
 
 	render() {
-		var pageComponent = <h1>switch-default</h1>
-
-		switch (this.state.page) {
-			case "accessories":
-				pageComponent = <PageAccessories/>;
-				break;
-			case "address":
-				pageComponent = <PageAddress/>;
-				break;
-			case "main":
-				pageComponent = <PageMain/>;
-				break;
-			case "memberdiscount":
-				pageComponent = <PageMemberDiscount/>;
-				break;
-			case "men":
-				pageComponent = <PageMen/>;
-				break;
-			case "myorders":
-				pageComponent = <PageMyOrders/>;
-				break;
-			case "press":
-				pageComponent = <PagePress/>;
-				break;
-			case "women":
-				pageComponent = <PageWomen/>;
-				break;
-			case "profile":
-				pageComponent = <PageProfile/>;
-				break;
-			case "more":
-				pageComponent = <PageMore/>;
-				break;
-		}
-
 		return (
 			<PersistentDrawerLeft>
-				{pageComponent}
+				{this.state.page}
 				<div className="invertedLineParent">
 					<div className="invertedLine"></div>
 				</div>

@@ -1,6 +1,9 @@
 import React from "react";
 import Carousel from "./carousel";
-import { setAppPage } from "./App";
+import { setAppPage, setAppComponent } from "./App";
+import PageWomen from "./PageWomen";
+import PageMen from "./PageMen";
+import PageAccessories from "./PageAccessories";
 
 export default class PageMain extends React.Component {
 	constructor(props) {
@@ -20,19 +23,19 @@ export default class PageMain extends React.Component {
 			</Carousel>
 
 			<div className="frontPageLink">
-				<a onClick={this.changePage.bind(this, "women")}>
+				<a onClick={setAppComponent.bind(this, <PageWomen/>)}>
 					<img src="images/women.png"></img>
 				</a>
 			</div>
 
 			<div className="frontPageLink">
-				<a onClick={this.changePage.bind(this, "men")}>
+				<a onClick={setAppComponent.bind(this, <PageMen/>)}>
 					<img src="images/men.png"></img>
 				</a>
 			</div>
 
 			<div className="frontPageLink">
-				<a onClick={this.changePage.bind(this, "accessories")}>
+				<a onClick={setAppComponent.bind(this, <PageAccessories/>)}>
 					<img src="images/accessories.png"></img>
 				</a>
 			</div>
