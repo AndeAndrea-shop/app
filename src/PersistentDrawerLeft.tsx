@@ -21,7 +21,8 @@ import HomeIcon from '@material-ui/icons/Home';
 import AddressIcon from '@material-ui/icons/Place';
 import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
-import CartIcon from '@material-ui/icons/Shop';
+import BookmarkIcon from '@material-ui/icons/BookmarkBorder';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCartOutlined';
 import { setAppComponent } from './components/App';
 import PageMain from './components/PageMain';
 import PageMore from './components/PageMore';
@@ -122,11 +123,6 @@ export default function PersistentDrawerLeft(props) {
 		setOpen(false);
 	};
 
-	const changePage = (which: string) => {
-		console.log("changePage PersistentDrawerLeft", which)
-		setAppPage(which);
-	};
-
 	return (
 		<div className={classes.root}>
 			<CssBaseline/>
@@ -151,8 +147,8 @@ export default function PersistentDrawerLeft(props) {
 						Ande Andrea
 					</Typography>
 					<div className={clsx(open && classes.hide)}>
-						<CartIcon/>
-						<CartIcon/>
+						<BookmarkIcon/>
+						<ShoppingCartIcon/>
 					</div>
 				</Toolbar>
 			</AppBar>

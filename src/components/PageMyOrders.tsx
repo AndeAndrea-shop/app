@@ -1,5 +1,5 @@
 import React from "react"
-import { Table, TableRow, TableCell } from "@material-ui/core";
+import { Table, TableRow, TableCell, TableHead, TableBody, Typography, Divider } from "@material-ui/core";
 
 export default class PageMyOrders extends React.Component {
 	constructor(props) {
@@ -8,18 +8,33 @@ export default class PageMyOrders extends React.Component {
 
 	render() {
 		return <>
-			<h1>Page MyOrders Demo</h1>
+			<Typography variant="h6" align="center">My Orders</Typography>
+			<Divider/>
 			<Table>
-				<TableRow>
-					<TableCell>One</TableCell>
-					<TableCell>Two</TableCell>
-					<TableCell>Three</TableCell>
-				</TableRow>
-				<TableRow>
-					<TableCell>1</TableCell>
-					<TableCell>2</TableCell>
-					<TableCell>3</TableCell>
-				</TableRow>
+				<TableHead>
+					<TableRow>
+						<TableCell>Description</TableCell>
+						<TableCell>Size</TableCell>
+						<TableCell>Condition</TableCell>
+					</TableRow>
+				</TableHead>
+				<TableBody>
+					<TableRow>
+						<TableCell>Skirt</TableCell>
+						<TableCell>L</TableCell>
+						<TableCell>New</TableCell>
+					</TableRow>
+					<TableRow>
+						<TableCell>Blouse</TableCell>
+						<TableCell>L</TableCell>
+						<TableCell>Fine</TableCell>
+					</TableRow>
+					<TableRow>
+						<TableCell>Jacket</TableCell>
+						<TableCell>XL</TableCell>
+						<TableCell>Fine</TableCell>
+					</TableRow>
+				</TableBody>
 			</Table>
 		</>
 	}
