@@ -1,5 +1,5 @@
 import React, { ReactInstance, ComponentElement, ComponentType, ReactComponentElement } from "react";
-import PersistentDrawerLeft from "../PersistentDrawerLeft"
+import PersistentDrawerLeft from "./PersistentDrawerLeft"
 import PageMain from "../components/PageMain";
 import PageAccessories from "../components/PageAccessories";
 import PageMen from "../components/PageMen";
@@ -8,7 +8,7 @@ import PageMemberDiscount from "../components/PageMemberDiscount";
 import PageMyOrders from "../components/PageMyOrders";
 import PagePress from "../components/PagePress";
 import PageAddress from "../components/PageAddress";
-import "../style/app.scss";
+import "../style/App.scss";
 import PageProfile from "./PageProfile";
 import PageMore from "./PageMore";
 

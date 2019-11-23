@@ -1,7 +1,15 @@
 import React from "react"
 import { Table, TableRow, TableCell, TableHead, TableBody, Typography, Divider } from "@material-ui/core";
 
-export default class PageMyOrders extends React.Component {
+interface Props {
+	// nothing yet
+}
+
+interface State {
+	// nothing yet
+}
+
+export default class PageMyOrders extends React.Component<Props, State> {
 	constructor(props) {
 		super(props);
 	}

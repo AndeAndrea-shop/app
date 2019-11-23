@@ -36,7 +36,6 @@ export default class Chart extends React.Component<ChartProps, ChartState> {
 	}
 
 	render() {
-		console.log("render", this.state);
 		return (
 			<React.Fragment>
 				<Title>Today</Title>

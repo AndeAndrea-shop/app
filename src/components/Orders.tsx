@@ -28,8 +28,8 @@ const useStyles = makeStyles(theme => ({
 	},
 }));
 
-export default function Orders() {
-	const classes = useStyles();
+export default function Orders(props) {
+	const classes = useStyles(props);
 	return (
 		<React.Fragment>
 			<Title>Recent Orders</Title>

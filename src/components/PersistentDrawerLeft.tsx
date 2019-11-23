@@ -23,17 +23,17 @@ import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
 import BookmarkIcon from '@material-ui/icons/BookmarkBorder';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCartOutlined';
-import { setAppComponent } from './components/App';
-import PageMain from './components/PageMain';
-import PageMore from './components/PageMore';
-import PageProfile from './components/PageProfile';
-import PageAddress from './components/PageAddress';
-import PageMyOrders from './components/PageMyOrders';
-import PageMemberDiscount from './components/PageMemberDiscount';
-import PagePress from './components/PagePress';
-import PageAccessories from './components/PageAccessories';
-import PageMen from './components/PageMen';
-import PageWomen from './components/PageWomen';
+import { setAppComponent } from './App';
+import PageMain from './PageMain';
+import PageMore from './PageMore';
+import PageProfile from './PageProfile';
+import PageAddress from './PageAddress';
+import PageMyOrders from './PageMyOrders';
+import PageMemberDiscount from './PageMemberDiscount';
+import PagePress from './PagePress';
+import PageAccessories from './PageAccessories';
+import PageMen from './PageMen';
+import PageWomen from './PageWomen';
 
 const drawerWidth = 240;
 

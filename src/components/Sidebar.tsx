@@ -22,6 +22,8 @@ import AddressIcon from '@material-ui/icons/Place';
 import OrderIcon from '@material-ui/icons/List';
 import DiscountIcon from '@material-ui/icons/Money';
 import { setAppPage } from "../app";
+import { setAppComponent } from './App';
+import PageMain from './PageMain';
 
 const drawerWidth = 240;
 
@@ -122,11 +124,6 @@ export default class PersistentDrawerLeft extends React.Component<SidebarProps, 
 		});
 	}
 
-	changePage(which: string) {
-		console.log("Sidebar change page", which);
-		setAppPage(which);
-	}
-
 	render() {
 		//var classes = this.classes;
 		//var theme = this.theme;
@@ -135,7 +132,7 @@ export default class PersistentDrawerLeft extends React.Component<SidebarProps, 
 		var open = this.state.open;
 		return (
 			<div className={classes.root}>
-				<CssBaseline />
+				<CssBaseline/>
 				<AppBar
 					position="fixed"
 					className={clsx(classes.appBar, {
@@ -150,7 +147,7 @@ export default class PersistentDrawerLeft extends React.Component<SidebarProps, 
 							edge="start"
 							className={clsx(classes.menuButton, open && classes.hide)}
 						>
-							<MenuIcon />
+							<MenuIcon/>
 						</IconButton>
 						<Typography variant="h6" noWrap>
 							Ande Andrea
@@ -168,53 +165,53 @@ export default class PersistentDrawerLeft extends React.Component<SidebarProps, 
 				>
 					<div className={classes.drawerHeader}>
 						<IconButton onClick={this.handleDrawerClose}>
-							{theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+							{theme.direction === 'ltr' ? <ChevronLeftIcon/> : <ChevronRightIcon/>}
 						</IconButton>
 					</div>
-					<Divider />
+					<Divider/>
 					<List>
 
-						<ListItem button action={this.changePage.bind(this, "home")} onClick={this.changePage.bind(this, "home")}>
+						<ListItem button onClick={setAppComponent.bind(this, <PageMain/>)}>
 							<ListItemIcon><HomeIcon/></ListItemIcon>
-							<ListItemText primary="Homeasd" />
+							<ListItemText primary="Home"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><HomeIcon/></ListItemIcon>
-							<ListItemText primary="Women" />
+							<ListItemText primary="Women"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><HomeIcon/></ListItemIcon>
-							<ListItemText primary="Men" />
+							<ListItemText primary="Men"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><HomeIcon/></ListItemIcon>
-							<ListItemText primary="Accessories" />
+							<ListItemText primary="Accessories"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><HomeIcon/></ListItemIcon>
-							<ListItemText primary="Press" />
+							<ListItemText primary="Press"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><DiscountIcon/></ListItemIcon>
-							<ListItemText primary="Member Discount" />
+							<ListItemText primary="Member Discount"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><OrderIcon/></ListItemIcon>
-							<ListItemText primary="My Orders" />
+							<ListItemText primary="My Orders"/>
 						</ListItem>
 						<ListItem button>
 							<ListItemIcon><AddressIcon/></ListItemIcon>
-							<ListItemText primary="Address" />
+							<ListItemText primary="Address"/>
 						</ListItem>
 					</List>
-					{/*<Divider />*/}
+					{/*<Divider/>*/}
 				</Drawer>
 				<main
 					className={clsx(classes.content, {
 						[classes.contentShift]: open,
 					})}
 				>
-					<div className={classes.drawerHeader} />
+					<div className={classes.drawerHeader}/>
 					{/*
 					<Typography paragraph>
 						Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
