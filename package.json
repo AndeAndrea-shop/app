@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"watch": "parcel watch --public-url . ./src/app.tsx --no-hmr"
+		"watch": "parcel watch --public-url . ./src/app.tsx --no-hmr",
+		"build": "parcel build --public-url . ./src/app.tsx"
 	},
 	"author": "",
 	"license": "ISC",
