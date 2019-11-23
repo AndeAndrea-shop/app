@@ -1,16 +1,7 @@
-import React, { ReactInstance, ComponentElement, ComponentType, ReactComponentElement } from "react";
+import React from "react";
 import PersistentDrawerLeft from "./PersistentDrawerLeft"
 import PageMain from "../components/PageMain";
-import PageAccessories from "../components/PageAccessories";
-import PageMen from "../components/PageMen";
-import PageWomen from "../components/PageWomen";
-import PageMemberDiscount from "../components/PageMemberDiscount";
-import PageMyOrders from "../components/PageMyOrders";
-import PagePress from "../components/PagePress";
-import PageAddress from "../components/PageAddress";
 import "../style/App.scss";
-import PageProfile from "./PageProfile";
-import PageMore from "./PageMore";
 
 //export function setAppComponent(component: React.Component) {
 export function setAppComponent(component: any) {
@@ -18,17 +9,17 @@ export function setAppComponent(component: any) {
 	app.changeComponent(component);
 }
 
-interface AppProps {
+type ReactComponentInstance = React.ComponentElement<any, any>;
+
+interface Props {
 	nothing?: "yet";
 }
 
-type ReactComponentInstance = React.ComponentElement<any, any>;
-
-interface AppState {
+interface State {
 	page: ReactComponentInstance
 }
 
-export class App extends React.Component<AppProps, AppState> {
+export class App extends React.Component<Props, State> {
 	static instance: App;
 
 	constructor(props) {

@@ -110,11 +110,6 @@ export default function PersistentDrawerLeft(props) {
 	const theme = useTheme();
 	const [open, setOpen] = React.useState(false);
 
-	Object.assign(window, {
-		classes,
-		theme
-	})
-
 	const handleDrawerOpen = () => {
 		setOpen(true);
 	};
