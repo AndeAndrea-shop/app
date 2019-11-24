@@ -20,7 +20,7 @@ const styles = {
 };
 
 export const TestSwipableViews = (props) => (
-	<SwipeableViews /*enableMouseEvents*/>
+	<SwipeableViews /*enableMouseEvents*/ hysteresis={0.2}>
 		{props.children}
 		<div style={Object.assign({}, styles.slide, styles.slide1)}>
 			slide n°1

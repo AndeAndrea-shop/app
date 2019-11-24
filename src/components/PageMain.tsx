@@ -21,12 +21,8 @@ export default class PageMain extends React.Component {
 
 			{/*<TestParallaxSlide style="width: 40%"></TestParallaxSlide>*/}
 			<TestSwipableViews className="Carousel">
-				<div className="CarouselItem">
-					<img src="images/carousel_1.png"></img>
-				</div>
-				<div className="CarouselItem">
-					<img src="images/carousel_2.png"></img>
-				</div>
+				<img src="images/carousel_1.png"></img>
+				<img src="images/carousel_2.png"></img>
 			</TestSwipableViews>
 
 			<div className="frontPageLink">

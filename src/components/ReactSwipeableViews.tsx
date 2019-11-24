@@ -276,6 +276,8 @@ class SwipeableViews extends React.Component<SwipeableViewsProps, SwipeableViews
 			displaySameSlide: true,
 		};
 		this.setIndexCurrent(props.index);
+
+		window["swipeableViews"] = this;
 	}
 
 	getChildContext() {
@@ -822,11 +824,12 @@ So animateHeight is most likely having no effect at all.`,
 				{...touchEvents}
 				{...mouseEvents}
 				onScroll={this.handleScroll}
+				className="Carousel"
 			>
 				<div
 					ref={this.setContainerNode}
 					style={Object.assign({}, containerStyle, styles.container, containerStyleProp)}
-					className="react-swipeable-view-container"
+					className="CarouselItem"
 				>
 					{React.Children.map(children, (child, indexChild) => {
 						if (renderOnlyActive && indexChild !== indexLatest) {
