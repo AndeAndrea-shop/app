@@ -168,10 +168,21 @@ function CarouselItem(props) {
 	)
 }
 
-class Indicators extends React.Component {
+interface IndicatorsProps {
+	carousel: Carousel;
+	length: number;
+	active: number;
+	press: CallableFunction
+}
+
+interface IndicatorsState {
+	// nothing yet
+}
+
+class Indicators extends React.Component<IndicatorsProps, IndicatorsState> {
 	constructor(props) {
 		super(props);
-		this.onClick = this.onClick.bind(this);
+		//this.onClick = this.onClick.bind(this);
 	}
 
 	onClick(i) {

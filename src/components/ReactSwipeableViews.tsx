@@ -22,7 +22,7 @@ import {
 	getDisplaySameSlide,
 } from 'react-swipeable-views-core';
 
-function addEventListenerEnhanced(node, event, handler, options) {
+function addEventListenerEnhanced(node: any, event: any, handler: any, options?: any) {
 	addEventListener(node, event, handler, options);
 	return {
 		remove() {
@@ -209,37 +209,52 @@ export function findNativeHandler(params) {
 	});
 }
 
-class SwipeableViews extends React.Component {
+interface SwipeableViewsProps {
+	hysteresis: number;
+	disabled: boolean;
+	disableLazyLoading: boolean;
+	action: CallableFunction;
+	animateTransitions: boolean;
+	axis: any;
+	ignoreNativeScroll: any;
+	onSwitching: any;
+	resistance: any;
+	onChangeIndex: CallableFunction;
+	threshold: number;
+	onTouchStart: any;
+	onTouchEnd: any;
+	onMouseDown: any;
+	onMouseUp: any;
+	onMouseLeave: any;
+	onMouseMove: any;
+	onScroll: any;
+	onTransitionEnd: CallableFunction;
+}
+
+interface SwipeableViewsState {
+	indexLatest: number;
+	isDragging: boolean;
+	renderOnlyActive: boolean;
+	heightLatest: number;
+	displaySameSlide: boolean;
+}
+
+class SwipeableViews extends React.Component<SwipeableViewsProps, SwipeableViewsState> {
 	rootNode = null;
-
 	containerNode = null;
-
 	ignoreNextScrollEvents = false;
-
 	viewLength = 0;
-
 	startX = 0;
-
 	lastX = 0;
-
 	vx = 0;
-
 	startY = 0;
-
 	isSwiping = undefined;
-
 	started = false;
-
 	startIndex = 0;
-
 	transitionListener = null;
-
 	touchMoveListener = null;
-
 	activeSlide = null;
-
 	indexCurrent = null;
-
 	firstRenderTimeout = null;
 
 	constructor(props) {
