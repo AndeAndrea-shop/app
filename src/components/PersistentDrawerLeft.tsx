@@ -34,6 +34,7 @@ import PagePress from './PagePress';
 import PageAccessories from './PageAccessories';
 import PageMen from './PageMen';
 import PageWomen from './PageWomen';
+import PageWatchlist from './PageWatchlist';
 
 const drawerWidth = 240;
 
@@ -102,6 +103,9 @@ const useStyles = makeStyles(theme => ({
 	},
 	andeandrea: {
 		fontFamily: "Georgia, Times, Times New Roman, serif"
+	},
+	icon: {
+		padding: 5
 	}
 }));
 
@@ -138,12 +142,18 @@ export default function PersistentDrawerLeft(props) {
 					>
 						<MenuIcon/>
 					</IconButton>
-					<Typography variant="h6" noWrap className={classes.andeandrea}>
-						Ande Andrea
-					</Typography>
+					<IconButton onClick={setAppComponent.bind(null, <PageMain/>)}>
+						<Typography variant="h6" noWrap className={classes.andeandrea}>
+							Ande Andrea
+						</Typography>
+					</IconButton>
 					<div className={clsx(open && classes.hide)}>
-						<BookmarkIcon/>
-						<ShoppingCartIcon/>
+						<IconButton className={classes.icon} onClick={setAppComponent.bind(null, <PageWatchlist/>)}>
+							<BookmarkIcon/>
+						</IconButton>
+						<IconButton className={classes.icon} onClick={setAppComponent.bind(null, <PageMyOrders/>)}>
+							<ShoppingCartIcon/>
+						</IconButton>
 					</div>
 				</Toolbar>
 			</AppBar>
