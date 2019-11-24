@@ -24,6 +24,7 @@
 		"react-easy-swipe": "0.0.18",
 		"react-swipe": "^6.0.4",
 		"react-swipeable": "^5.4.0",
+		"react-swipeable-views": "^0.13.3",
 		"recharts": "^1.8.5",
 		"webpack": "^4.41.2"
 	},
