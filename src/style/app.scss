@@ -12,6 +12,14 @@ html, body {
 	//background-color: greenyellow;
 }
 
+.frontPageLink {
+	padding-bottom: 6px;
+}
+
+.frontPageLink img {
+	display: block;
+}
+
 .frontPageLink * {
 	width: 100%;
 }
@@ -34,4 +42,8 @@ html, body {
 	display: flex;
 	justify-content: center;
 	//margin-bottom: 20px;
+}
+
+.MuiDivider-root {
+	margin: 10px !important;
 }
