@@ -28,7 +28,7 @@
 		"react-swipe": "^6.0.4",
 		"react-swipeable": "^5.4.0",
 		"react-swipeable-views": "^0.13.3",
-		"recharts": "^1.8.5",
+		"recharts": "^2.1.14",
 		"serialize-javascript": "^2.1.1",
 		"webpack": "^4.41.2"
 	},
